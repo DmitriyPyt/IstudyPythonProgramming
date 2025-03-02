@@ -1,0 +1,28 @@
+# import typer
+
+# typer.prompt("right down",confirmation_prompt=True)
+
+
+
+class Knight:
+    def __init__(self,weapon: str, health: int,armor: int,attack: int):
+        self.weapon = weapon
+        self.health = health
+        self.armor = armor
+        self.attack = attack 
+
+    def attack_enemy(self,enemy: 'Knight'):
+        if self.is_alive:
+            enemy.health -= self.attack
+        else:
+            print('Наш рыцарь мёртв!')
+    
+    def is_alive(self):
+        if self.hp > 0:
+            return True
+a = int(input("Какой урон будет у 'Jhon'?"))
+b = int(input("Какой урон будет у 'Will'?"))
+Jhon = Knight('sword',120,100,a) 
+Will = Knight('crosbwo',120,100,b)
+Jhon.attack_enemy(Will)
+print('У "Well"', Will.health, 'hp')
